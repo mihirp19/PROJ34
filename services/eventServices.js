@@ -1,3 +1,4 @@
+import { ERROR_MESSAGES } from "../constants/constants.js";
 import Event from "../models/Event.js";
 import { parseUserDateTime } from "../utils/timeConvertUtil.js";
 
@@ -34,7 +35,7 @@ export const eventDetailsService = async (id) => {
 
 export const recommendationsService = async (id) => {
     const event = await Event.findById(id);
-    if (!event) throw new Error("Event not found");
+    if (!event) throw new Error(ERROR_MESSAGES.EVENT_NOT_FOUND);
 
     return await Event.find({
         _id: { $ne: event._id },

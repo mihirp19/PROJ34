@@ -1,4 +1,4 @@
-import { rsvpEventService } from "../services/rsvpServices.js";
+import { rsvpEventService, getRSVPListService } from "../services/rsvpServices.js";
 
 export const rsvpEvent = async (req, res) => {
   try {
@@ -11,5 +11,14 @@ export const rsvpEvent = async (req, res) => {
     res.json(data);
   } catch (err) {
     res.status(400).json({ error: err.message });
+  }
+};
+
+export const getRSVPList = async (req, res) => {
+  try {
+    const list = await getRSVPListService(req.params.eventId);
+    res.json(list);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 };

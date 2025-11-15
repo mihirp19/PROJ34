@@ -16,6 +16,13 @@ const rsvpSchema = new mongoose.Schema({
     enum: ["going", "maybe", "decline"],
     required: true
   }
+  ,
+  user_name: {
+    type: String,
+  },
+  event_title: {
+    type: String,
+  }
 }, { timestamps: true });
 
 export default mongoose.model("RSVP", rsvpSchema);
