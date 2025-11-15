@@ -135,6 +135,7 @@ Example body:
 {
   "title": "Night Market",
   "description": "Food and crafts",
+  "date": "16-11-2025",
   "start_time": "2026-01-01T12:00:00Z",
   "end_time": "2026-01-01T18:00:00Z",
   "city": "San Francisco",
